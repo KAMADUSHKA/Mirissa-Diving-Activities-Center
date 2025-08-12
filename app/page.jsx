@@ -5,6 +5,7 @@ import Footer from "./(component)/footer";
 import Header from "./(component)/header";
 import Swiper from "./(component)/swiper"
 
+
 export default function Home() {
   return (
     <>
@@ -12,8 +13,9 @@ export default function Home() {
         <Header/>
       </div>
 
-      <h1>home page </h1>
+    
       <Swiper/>
+      {/* <AppleCardsCarouselDemo/> */}
       <div>
         <Footer />
       </div>
