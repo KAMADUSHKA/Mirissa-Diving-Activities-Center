@@ -54,7 +54,7 @@ const packageDataDetails = [
     name: "Turtle Snorkeling",
     description:
       " Swim alongside majestic sea turtles in crystal-clear waters.",
-    img: "/Fun-Diving.jpg",
+    img: "/Turtle-Snorkeling.jpg",
     
   },
 ];

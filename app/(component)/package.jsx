@@ -24,24 +24,66 @@ import { useState } from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const tourPackingData = [
-  {
-    name: "Deep Diving",
-    description:
-      "Go deeper and discover unique underwater landscapes and species",
+{
+    name: "Snorkeling With Turtles",
     img: "/Deep-Diving.jpg",
+    description_1: "Swim in the crystal-clear waters of Mirissa and enjoy a guaranteed encounter with graceful sea turtles.",
+    description_2: "Discover colorful coral gardens, tropical fish, and other fascinating marine life with high-quality snorkeling gear and an expert guide.",
+    Time_Duration: "• Time Duration - 2h",
+    Special: "• Flexible Time",
+    Other_Details_1: "Full safety support and life guard assistance are provided throughout the tour.",
+    Other_Details_2: "Whether you’re new to snorkeling or an experienced swimmer, this experience promises unforgettable moments in the ocean."
   },
   {
-    name: "Scuba Diving",
-    description:
-      "Explore the vibrant underwater world with guided scuba adventures.",
-    img: "/Scuba-Diving.jpg",
+    name: "Snorkeling With Whales",
+    img: "/Deep-Diving.jpg",
+    description_1: "Feel the excitement of swimming alongside the gentle giants of the ocean in this breathtaking snorkeling adventure.",
+    description_2: "Perfect for beginners and experienced snorkelers, our professional crew and well-equipped boats make this an unforgettable marine experience.",
+    Time_Duration: "• Time Duration - 4h",
+    Special: "• Departing at 06:00 AM",
+    Other_Details_1: "Enjoy a delicious breakfast onboard to keep your energy high during the trip.",
+    Other_Details_2: "Explore Mirissa’s deep blue waters with premium gear, expert guidance, and complete safety support from our Life Guard Team."
   },
   {
-    name: "Fun Diving",
-    description:
-      " Relaxed dives for certified divers to enjoy stunning marine life.",
-    img: "/Fun-Diving.jpg",
+    name: "Scuba Diving Tours",
+    img: "/Deep-Diving.jpg",
+    description_1: "Uncover the mysteries of Mirissa’s underwater world on an exciting scuba diving adventure.",
+    description_2: "Dive among vibrant corals, explore hidden shipwrecks, and encounter diverse marine creatures in their natural habitat.",
+    Time_Duration: "• Time Duration - 1h",
+    Special: "• Flexible Time",
+    Other_Details_1: "All necessary diving equipment, including oxygen tanks, is provided.",
+    Other_Details_2: "Suitable for both first-time divers and seasoned professionals, with safety and guidance from experienced instructors."
   },
+  {
+    name: "Boat Tours",
+    img: "/Deep-Diving.jpg",
+    description_1: "Set sail on an unforgettable boat tour along the scenic coast of Mirissa.",
+    description_2: "Admire panoramic ocean views, visit hidden coves and islands, and spot playful dolphins in the wild.",
+    Time_Duration: "• Time Duration - 2h",
+    Special: "",
+    Other_Details_1: "We offer shared or private tours, ideal for solo travelers, couples, or small groups seeking a personalized sea adventure.",
+    Other_Details_2: "Choose the package that suits you best and enjoy a memorable journey across the turquoise waters of Mirissa."
+  },
+  {
+    name: "Deep Sea Fishing Tours",
+    img: "/Deep-Diving.jpg",
+    description_1: "Embark on an action-packed deep sea fishing trip in the waters of Mirissa.",
+    description_2: "Target big game fish like tuna, sailfish, and mahi-mahi with the help of our expert crew.",
+    Time_Duration: "• Time Duration - 4h",
+    Special: "• Departing at 06:00 AM",
+    Other_Details_1: "Whether you’re an experienced angler or trying fishing for the first time, our modern boats and professional team will make it an unforgettable adventure.",
+    Other_Details_2: "Includes a hearty breakfast, safety equipment, and essential medicines for a comfortable trip."
+  },
+  {
+    name: "Low Deep Sea Fishing Tours",
+    img: "/Deep-Diving.jpg",
+    description_1: "Enjoy the thrill of fishing in the calmer waters near Mirissa, Sri Lanka.",
+    description_2: "Our skilled guides will lead you to the most productive fishing spots.",
+    Time_Duration: "• Time Duration - 2.5h",
+    Special: "• Available for fun fishing or catch and release.",
+    Other_Details_1: "Catch a variety of species, including Red Marlin, Chicken Fish, and Snapper.",
+    Other_Details_2: "Perfect for both beginners and pros, with all equipment, guidance, and safety gear provided."
+  }
 ];
 
 export default function PackageCard() {
@@ -71,54 +113,78 @@ export default function PackageCard() {
       <Card
         sx={{
           borderRadius: 4,
-          maxWidth: 350,
-          boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+          maxWidth: 380,
+          boxShadow: "0 4px 10px rgba(0, 0, 0, 0.141)",
           ":hover": {
-            boxShadow: "0 6px 15px rgba(0, 0, 0, 0.2)",
+            boxShadow: "0 6px 15px rgba(0, 0, 0, 0.451)",
           },
           transition: "all 0.3s ease",
+          position: "relative", // needed for absolute positioning inside
         }}
       >
-        <CardHeader
-          avatar={
+        {/* Image with overlay */}
+        <Box sx={{ position: "relative" }}>
+          <CardMedia
+            component="img"
+            height="220"
+            image="/Deep-Diving.jpg"
+            alt="CourseName"
+            sx={{
+              borderRadius: 3,
+              transition: "transform 0.5s ease",
+              "&:hover": { transform: "scale(1.1)" },
+            }}
+          />
+
+          {/* Overlay content */}
+          <Box
+            sx={{
+              position: "absolute",
+              top: 16,
+              left: 16,
+              display: "flex",
+              alignItems: "center",
+              gap: 1,
+              backgroundColor: "rgba(0, 0, 0, 0.4)",
+              padding: "4px 8px",
+              borderRadius: 2,
+            }}
+          >
             <Avatar
-              sx={{ bgcolor: "rgba(236, 73, 73, 0.71)" }}
-              aria-label="course"
+              sx={{ bgcolor: "rgba(236, 73, 73, 0.71)", width: 40, height: 40 }}
+              src="/MainLogo.png"
             >
-              R
+              
             </Avatar>
-          }
-          title={
-            <Typography variant="h6" fontWeight="bold">
-              Snorkeling With Turtles
+            <Typography variant="h6" fontWeight="bold" color="white">
+              {item.name}
             </Typography>
-          }
-          
-        />
-        <CardMedia
-          component="img"
-          height="180"
-          image="/Deep-Diving.jpg"
-          alt="CourseName"
-        />
+          </Box>
+        </Box>
+
+        {/* Card content */}
         <CardContent>
           <ListItem disablePadding>
             <ListItemIcon>
               <StarIcon sx={{ color: "gold" }} />
             </ListItemIcon>
             <ListItemText
-              primary={<Typography fontWeight="bold">Join With Us Now</Typography>}
+              primary={
+                <Typography fontWeight="bold">Join With Us Now</Typography>
+              }
             />
           </ListItem>
-          <Typography variant="body2">Dive into the clear sea water of Mirissa on snorkeling tour and encounter sea turtles guaranteed! </Typography>
-          <Typography variant="body2">
-           Explore vibrant coral reefs, exotic fish, and other marine life with top-quality gear and expert guidance. 
+          <Typography variant="body2" sx={{ mb: 1 }}>
+            {item.description_1}
           </Typography>
-          <Typography variant="body2">First Payment: ₹FirstPayment</Typography>
-          <Typography variant="body2">
-            Registration Fee: ₹RegistrationFee
+
+          <Typography variant="body2" sx={{ mb: 1 }}>
+            {item.description_2}
           </Typography>
+         
         </CardContent>
+
+        {/* Actions & Collapse */}
         <CardActions>
           <ExpandMore
             expand={expandedCards[index] || false}
@@ -135,12 +201,21 @@ export default function PackageCard() {
           unmountOnExit
         >
           <CardContent>
-            <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
+            <Typography variant="subtitle1" fontWeight="bold" sx={{ mb: 2 }} gutterBottom>
               Other Details:
             </Typography>
-            <Typography variant="body2" color="text.secondary">
-              itemOtherDetails
-            </Typography>
+            <Typography variant="body2" sx={{ mb: 2 }}>
+            {item.Time_Duration}
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 2 }}>
+            {item.Special}
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 2 }}>
+           {item.Other_Details_1}
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1 }}>
+           {item.Other_Details_2}
+          </Typography>
           </CardContent>
         </Collapse>
       </Card>
@@ -149,7 +224,12 @@ export default function PackageCard() {
 
   return (
     <>
-      <Grid container spacing={4} justifyContent="center" sx={{ marginBottom: 20 }}>
+      <Grid
+        container
+        spacing={4}
+        justifyContent="center"
+        sx={{ marginBottom: 20 }}
+      >
         {tourPackingData.map((card, index) => cardData(card, index))}
       </Grid>
     </>
