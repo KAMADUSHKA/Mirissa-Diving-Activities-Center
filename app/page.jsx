@@ -30,6 +30,7 @@ import { styled } from "@mui/material/styles";
 import { useState } from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
+
 const packageDataDetails = [
   {
     name: "Deep Diving",
@@ -118,6 +119,7 @@ export default function Home() {
         </Grid>
 
         <PackageCard  />
+      
       </Container>
 
       <div>
