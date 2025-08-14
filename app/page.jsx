@@ -19,7 +19,9 @@ import {
   CardHeader,
   Collapse,
   Container,
+  Divider,
   Grid,
+  Link,
   IconButton,
   ListItem,
   ListItemIcon,
@@ -29,7 +31,7 @@ import StarIcon from "@mui/icons-material/Star";
 import { styled } from "@mui/material/styles";
 import { useState } from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-
+import AboutSection from "./(component)/aboutSection";
 
 const packageDataDetails = [
   {
@@ -49,14 +51,12 @@ const packageDataDetails = [
     description:
       " Relaxed dives for certified divers to enjoy stunning marine life.",
     img: "/Fun-Diving.jpg",
-    
   },
-    {
+  {
     name: "Turtle Snorkeling",
     description:
       " Swim alongside majestic sea turtles in crystal-clear waters.",
     img: "/Turtle-Snorkeling.jpg",
-    
   },
 ];
 
@@ -113,14 +113,101 @@ export default function Home() {
         <CardHoverEffectDemo/>
       </div> */}
 
-      <Container maxWidth="xl" >
-        <Grid container spacing={3} justifyContent="center" sx={{ marginBottom: 10, marginTop: 10 }}>
+      <Container maxWidth="xl">
+
+        <AboutSection/>
+
+        
+        <Grid
+          container
+          spacing={3}
+          justifyContent="center"
+          sx={{ marginBottom: 10, marginTop: 10 }}
+        >
           {packageDataDetails.map((card, index) => packageData(card, index))}
         </Grid>
 
-        <PackageCard  />
-      
+        <PackageCard />
+
+        <Typography
+          variant="h2"
+          align="center"
+          gutterBottom
+          sx={{
+            fontWeight: "bold",
+            fontFamily: "Cormorant Garamond, serif",
+            color: "rgb(18, 104, 18)",
+            textShadow: "2px 45px 4px rgba(18,104,18,0.1)",
+          }}
+        >
+          YOUR HEALTH GOALS
+        </Typography>
+        <br />
+        <br />
+        <br />
+        <Grid container spacing={2} mt={3} mb={3}>
+          <Grid item xs={12} md={6}>
+            <Card
+              sx={{
+                display: "flex",
+                flexDirection: { xs: "column", sm: "row" },
+                width: "100%",
+                borderRadius: 6,
+                boxShadow: "0px 3px 6px rgba(0, 0, 0, 0.1)",
+                overflow: "hidden",
+              }}
+            >
+              {/* Text Section */}
+              <Box sx={{ display: "flex", flexDirection: "column", flex: 1 }}>
+                <CardContent sx={{ flex: "1 0 auto" }}>
+                  <Box
+                    sx={{
+                      backgroundColor: "rgba(60, 179, 113, 0.3)",
+                      p: 2,
+                      borderRadius: 3,
+                    }}
+                  >
+                    <Typography component="div" variant="h5" gutterBottom>
+                      WEIGHT LOSS
+                    </Typography>
+                    <Typography variant="subtitle1" color="text.secondary">
+                      Forget starving yourself to lose weight. Let us introduce
+                      you to a healthy regime where you make smart food choices
+                      without having to skip them to lose weight.
+                    </Typography>
+                  </Box>
+                </CardContent>
+              </Box>
+
+              {/* Image Section */}
+              <CardMedia
+                component="img"
+                sx={{
+                  width: { xs: "100%", sm: 250 },
+                  height: { xs: 200, sm: "auto" },
+                  objectFit: "cover",
+                }}
+                image="/Deep-Diving.jpg"
+                alt="Weight Loss"
+              />
+            </Card>
+          </Grid>
+        </Grid>
+
+
+        
+
+
+
       </Container>
+
+
+
+       
+
+
+
+
 
       <div>
         <Footer />
