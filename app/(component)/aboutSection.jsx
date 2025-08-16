@@ -84,6 +84,8 @@ export default function AboutSection() {
             fontFamily: "Cormorant Garamond, serif",
             color: "rgba(12, 93, 160, 0.8)",
             textShadow: "2px 45px 4px  rgba(33, 149, 243, 0.077)",
+            marginTop:6,
+            marginBottom:6
           }}
         >
           Welcome to Go Dive Mirissa

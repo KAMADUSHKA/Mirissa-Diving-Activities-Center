@@ -32,6 +32,8 @@ import { styled } from "@mui/material/styles";
 import { useState } from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AboutSection from "./(component)/aboutSection";
+import Review from "./(component)/review";
+import Contact from "./(component)/contact";
 
 const packageDataDetails = [
   {
@@ -114,20 +116,7 @@ export default function Home() {
       </div> */}
 
       <Container maxWidth="xl">
-
-        <AboutSection/>
-
-        
-        <Grid
-          container
-          spacing={3}
-          justifyContent="center"
-          sx={{ marginBottom: 10, marginTop: 10 }}
-        >
-          {packageDataDetails.map((card, index) => packageData(card, index))}
-        </Grid>
-
-        <PackageCard />
+        <AboutSection />
 
         <Typography
           variant="h2"
@@ -136,78 +125,114 @@ export default function Home() {
           sx={{
             fontWeight: "bold",
             fontFamily: "Cormorant Garamond, serif",
-            color: "rgb(18, 104, 18)",
-            textShadow: "2px 45px 4px rgba(18,104,18,0.1)",
+            color: "rgba(12, 93, 160, 0.8)",
+            textShadow: "2px 45px 4px rgba(33, 149, 243, 0.077)",
+            marginTop: 6,
+            marginBottom: 6,
           }}
         >
-          YOUR HEALTH GOALS
+          Why Choose Diving in Mirissa
         </Typography>
-        <br />
-        <br />
-        <br />
-        <Grid container spacing={2} mt={3} mb={3}>
+
+        <Grid
+          container
+          spacing={2}
+          mt={3}
+          mb={3}
+          justifyContent="center"
+          sx={{
+            background:
+              "linear-gradient(135deg, rgba(206, 206, 206, 0.737), rgba(255, 255, 255, 0.019))",
+            borderRadius: 4,
+            py: 4,
+          }}
+        >
           <Grid item xs={12} md={6}>
             <Card
               sx={{
                 display: "flex",
-                flexDirection: { xs: "column", sm: "row" },
+                flexDirection: { xs: "column", md: "row" }, // only switch to column below md (900px)
                 width: "100%",
-                borderRadius: 6,
-                boxShadow: "0px 3px 6px rgba(0, 0, 0, 0.1)",
                 overflow: "hidden",
+                boxShadow: "none",
+                background: "transparent",
+                height: { xs: "auto", md: 350, lg: 450 },
               }}
             >
-              {/* Text Section */}
-              <Box sx={{ display: "flex", flexDirection: "column", flex: 1 }}>
-                <CardContent sx={{ flex: "1 0 auto" }}>
-                  <Box
-                    sx={{
-                      backgroundColor: "rgba(60, 179, 113, 0.3)",
-                      p: 2,
-                      borderRadius: 3,
-                    }}
-                  >
-                    <Typography component="div" variant="h5" gutterBottom>
-                      WEIGHT LOSS
-                    </Typography>
-                    <Typography variant="subtitle1" color="text.secondary">
-                      Forget starving yourself to lose weight. Let us introduce
-                      you to a healthy regime where you make smart food choices
-                      without having to skip them to lose weight.
-                    </Typography>
-                  </Box>
-                </CardContent>
+              {/* Video Section */}
+              <Box
+                sx={{
+                  flex: 1,
+                  order: { xs: 1, md: 2 }, // video on top only below md
+                  minHeight: { xs: 220, md: "100%" },
+                }}
+              >
+                <video
+                  src="/Under-Watar-1.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    borderRadius: "12px",
+                  }}
+                />
               </Box>
 
-              {/* Image Section */}
-              <CardMedia
-                component="img"
+              {/* Text Section */}
+              <Box
                 sx={{
-                  width: { xs: "100%", sm: 250 },
-                  height: { xs: 200, sm: "auto" },
-                  objectFit: "cover",
+                  flex: 1,
+                  order: { xs: 2, md: 1 }, // text below video only below md
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                  textAlign: "center",
+                  p: { xs: 2, md: 3, lg: 4 },
                 }}
-                image="/Deep-Diving.jpg"
-                alt="Weight Loss"
-              />
+              >
+                <Typography
+                  component="div"
+                  variant="h5"
+                  gutterBottom
+                  sx={{
+                    fontWeight: "bold",
+                    color: "rgba(13, 80, 135, 0.929) ",
+                  }}
+                >
+                  Diving With Mirissa Diving Activities Center
+                </Typography>
+
+                <Typography
+                  variant="subtitle1"
+                  color="rgb(0, 0, 0)"
+                  sx={{
+                    mt: 1,
+                    maxWidth: { xs: 300, md: 520 },
+                    lineHeight: 1.6,
+                  }}
+                >
+                  Discover the wonders of the Indian Ocean with Mirissa Diving
+                  Activities Center. Swim alongside graceful sea turtles,
+                  colorful tropical fish, and spot majestic whales in
+                  crystal-clear waters. With expert guides, top-quality
+                  equipment, and unforgettable experiences, Mirissa is the
+                  perfect destination for both beginners and seasoned divers.
+                  Dive in and create memories that last a lifetime!
+                </Typography>
+              </Box>
             </Card>
           </Grid>
         </Grid>
 
-
-        
-
-
-
+        <PackageCard />
       </Container>
-
-
-
-       
-
-
-
-
+      <Contact />
+      <Review />
 
       <div>
         <Footer />

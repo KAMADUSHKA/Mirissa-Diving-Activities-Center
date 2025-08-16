@@ -43,14 +43,16 @@ export default function MySwiper() {
       navigation={true}
       modules={[Autoplay, Pagination, Navigation]}
       className="mySwiper"
+      
     >
       {slides.map((slide, index) => (
-        <SwiperSlide key={index}>
+        <SwiperSlide key={index}> 
           <div className={styles.slideContainer}>
             <Image
               src={slide.img}
               alt={slide.heading}
               className={styles.slideImage}
+              
             />
             <div className={styles.textOverlay}>
               <h1 className={styles.heading}>{slide.heading}</h1>
