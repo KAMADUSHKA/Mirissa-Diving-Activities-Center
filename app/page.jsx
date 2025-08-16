@@ -168,7 +168,7 @@ export default function Home() {
                 }}
               >
                 <video
-                  src="/Under-Watar-1.mp4"
+                  src="/Diving.mp4"
                   autoPlay
                   loop
                   muted
