@@ -34,6 +34,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AboutSection from "./(component)/aboutSection";
 import Review from "./(component)/review";
 import Contact from "./(component)/contact";
+import MainPackage from "./(component)/mainPackage";
 
 const packageDataDetails = [
   {
@@ -117,7 +118,7 @@ export default function Home() {
 
       <Container maxWidth="xl">
         <AboutSection />
-
+        <MainPackage/>
         <Typography
           variant="h2"
           align="center"

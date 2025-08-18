@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import { Box, Typography, Container, Grid, IconButton } from "@mui/material";
 import { motion } from "framer-motion";
@@ -66,6 +67,7 @@ const Contact = () => {
           overflow: "hidden",
           color: "#fff",
           py: 8,
+          marginBottom:5
         }}
       >
         {/* Background Video */}
