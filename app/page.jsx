@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
-import styles from "./page.module.css";
 import Footer from "./(component)/footer";
-import Header from "./(component)/Header.jsx";
+import Header from "./(component)/header.jsx";
 import Swiper from "./(component)/swiper";
+import Marquee from "./(component)/marquee"
 import { CardSpotlightDemo } from "./(component)/CardSpotlightDemo/CardSpotlightDemo";
 import { CardHoverEffectDemo } from "./(component)/CardHoverEffectDemo/CardHoverEffectDemo";
 import PackageCard from "./(component)/package";
@@ -107,6 +107,7 @@ export default function Home() {
       </div>
 
       <Swiper />
+      <Marquee/>
       {/* <AppleCardsCarouselDemo/> */}
       {/* <div>
         <CardSpotlightDemo />
@@ -115,6 +116,8 @@ export default function Home() {
       <div>
         <CardHoverEffectDemo/>
       </div> */}
+
+      
 
       <Container maxWidth="xl">
         <AboutSection />
