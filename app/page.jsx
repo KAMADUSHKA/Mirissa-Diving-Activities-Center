@@ -132,7 +132,14 @@ export default function Home() {
             color: "rgba(12, 93, 160, 0.8)",
             textShadow: "2px 45px 4px rgba(33, 149, 243, 0.077)",
             marginTop: 6,
-            marginBottom: 6,
+            marginBottom: 4,
+            // Responsive font sizes
+            fontSize: {
+              xs: "2rem", // small screens (mobile)
+              sm: "2.5rem", // tablets
+              md: "3.5rem", // desktop
+              lg: "4rem", // large desktop
+            },
           }}
         >
           Why Choose Diving in Mirissa

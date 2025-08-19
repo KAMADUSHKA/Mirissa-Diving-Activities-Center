@@ -11,7 +11,12 @@ import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 
 // import required modules
-import { FreeMode, Pagination, Autoplay, EffectCoverflow } from "swiper/modules";
+import {
+  FreeMode,
+  Pagination,
+  Autoplay,
+  EffectCoverflow,
+} from "swiper/modules";
 
 const features = [
   {
@@ -41,34 +46,35 @@ const stats = [
 
 const aboutImg = [
   {
-    img: "/Deep-Diving.jpg",
-  },
-  {
     img: "/Scuba-Diving.jpg",
-  },
-  {
-    img: "/Deep-Diving.jpg",
   },
   {
     img: "/Fun-Diving.jpg",
   },
   {
-    img: "/Deep-Diving.jpg",
+    img: "/Turtle-Snorkeling.jpg",
   },
   {
-    img: "/Turtle-Snorkeling.jpg",
+    img: "/Whale-Snorkeling.jpg",
+  },
+  {
+    img: "/Boat-Tours.jpg",
+  },
+  {
+    img: "/Deep-Sea-Fishing-Tour.jpg",
+  },
+  {
+    img: "/Low-Deep-Sea-Fishing-Tour.jpg",
   },
 ];
 
 export default function AboutSection() {
-    const imgStyle = {
-  borderRadius: "10px",
-  transition: "transform 0.3s ease",
-};
+  const imgStyle = {
+    borderRadius: "10px",
+    transition: "transform 0.3s ease",
+  };
   return (
     <>
-
-    
       {/* Intro Section */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -83,12 +89,19 @@ export default function AboutSection() {
             fontWeight: "bold",
             fontFamily: "Cormorant Garamond, serif",
             color: "rgba(12, 93, 160, 0.8)",
-            textShadow: "2px 45px 4px  rgba(33, 149, 243, 0.077)",
-            marginTop:6,
-            marginBottom:6
+            textShadow: "2px 45px 4px rgba(33, 149, 243, 0.077)",
+            marginTop: 6,
+            marginBottom: 4,
+            // Responsive font sizes
+            fontSize: {
+              xs: "2rem", // small screens (mobile)
+              sm: "2.5rem", // tablets
+              md: "3.5rem", // desktop
+              lg: "4rem", // large desktop
+            },
           }}
         >
-          Welcome to Go Dive Mirissa
+          Welcome to Mirissa Diving Activities Center
         </Typography>
         <Typography variant="subtitle1">
           Welcome to Mirissa Diving Activities Center, your gateway to
@@ -150,65 +163,65 @@ export default function AboutSection() {
         ))}
       </Grid>
 
-<Swiper
-  slidesPerView={1}
-  spaceBetween={20}
-  centeredSlides={true}
-  loop={true}
-  autoplay={{
-    delay: 2500,
-    disableOnInteraction: false,
-  }}
-  breakpoints={{
-    640: { slidesPerView: 2 },
-    1024: { slidesPerView: 3 },
-  }}
-  freeMode={true}
-  pagination={{ clickable: true }}
-  effect="coverflow" // ✅ cool 3D animation
-  coverflowEffect={{
-    rotate: 20,
-    stretch: 0,
-    depth: 100,
-    modifier: 1,
-    slideShadows: true,
-  }}
-  modules={[FreeMode, Pagination, Autoplay, EffectCoverflow]}
-  style={{
-    maxWidth: "800px",
-    margin: "40px auto",
-  }}
->
-  <SwiperSlide>
-    <Image
-      src="/Deep-Diving.jpg"
-      alt="Deep Diving"
-      width={250}
-      height={200}
-      style={{
-        borderRadius: "10px",
-        transition: "transform 0.3s ease",
-      }}
-      className="hover:scale-105" // ✅ smooth zoom on hover
-    />
-  </SwiperSlide>
-
-  {aboutImg.map((item, index) => (
-    <SwiperSlide key={index}>
-      <Image
-        src={item.img}
-        alt="Mirissa-Diving-Activities-Center"
-        width={250}
-        height={200}
-        style={{
-          borderRadius: "10px",
-          transition: "transform 0.3s ease",
+      <Swiper
+        slidesPerView={1}
+        spaceBetween={20}
+        centeredSlides={true}
+        loop={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
         }}
-        className="hover:scale-105"
-      />
-    </SwiperSlide>
-  ))}
-</Swiper>
+        breakpoints={{
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        }}
+        freeMode={true}
+        pagination={{ clickable: true }}
+        effect="coverflow" // ✅ cool 3D animation
+        coverflowEffect={{
+          rotate: 20,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        modules={[FreeMode, Pagination, Autoplay, EffectCoverflow]}
+        style={{
+          maxWidth: "800px",
+          margin: "40px auto",
+        }}
+      >
+        <SwiperSlide>
+          <Image
+            src="/Deep-Diving.jpg"
+            alt="Deep Diving"
+            width={250}
+            height={200}
+            style={{
+              borderRadius: "10px",
+              transition: "transform 0.3s ease",
+            }}
+            className="hover:scale-105" // ✅ smooth zoom on hover
+          />
+        </SwiperSlide>
+
+        {aboutImg.map((item, index) => (
+          <SwiperSlide key={index}>
+            <Image
+              src={item.img}
+              alt="Mirissa-Diving-Activities-Center"
+              width={250}
+              height={200}
+              style={{
+                borderRadius: "10px",
+                transition: "transform 0.3s ease",
+              }}
+              className="hover:scale-105"
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
       {/* Stats */}
       <Grid container spacing={3} sx={{ mt: 6, justifyContent: "center" }}>

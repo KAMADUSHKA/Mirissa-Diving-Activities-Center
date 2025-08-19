@@ -49,14 +49,21 @@ const Contact = () => {
         variant="h2"
         align="center"
         gutterBottom
-        sx={{
-          fontWeight: "bold",
-          fontFamily: "Cormorant Garamond, serif",
-          color: "rgba(12, 93, 160, 0.8)",
-          textShadow: "2px 45px 4px rgba(33, 149, 243, 0.077)",
-          marginTop: 6,
-          marginBottom: 6,
-        }}
+          sx={{
+            fontWeight: "bold",
+            fontFamily: "Cormorant Garamond, serif",
+            color: "rgba(12, 93, 160, 0.8)",
+            textShadow: "2px 45px 4px rgba(33, 149, 243, 0.077)",
+            marginTop: 6,
+            marginBottom: 4,
+            // Responsive font sizes
+            fontSize: {
+              xs: "2rem", // small screens (mobile)
+              sm: "2.5rem", // tablets
+              md: "3.5rem", // desktop
+              lg: "4rem", // large desktop
+            },
+          }}
       >
         Contact Us
       </Typography>
