@@ -38,7 +38,7 @@ const packageDataDetails = [
 export default function MainPackage() {
   const packageData = (item, index) => (
     <Grid key={index} item xs={12} sm={6} md={4} lg={4}>
-      <Card sx={{ maxWidth: 345, borderRadius: 3, marginTop:10 }}>
+      <Card sx={{ maxWidth: 335, borderRadius: 3, marginTop:10 }}>
         <CardActionArea>
           <CardMedia
             component="img"
@@ -76,7 +76,7 @@ export default function MainPackage() {
     <>
       <Grid
         container
-        spacing={3}
+        spacing={2}
         justifyContent="center"
         sx={{ marginBottom: 10 }}
       >
