@@ -142,7 +142,7 @@ export default function Home() {
             },
           }}
         >
-          Why Choose Diving in Mirissa
+          Why Choose Us
         </Typography>
 
         <Grid

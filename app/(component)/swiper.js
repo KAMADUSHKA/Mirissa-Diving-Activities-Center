@@ -1,8 +1,9 @@
 'use client'
 import React from "react";
 import Image from "next/image";
-import img1 from "../../public/about-1.jpg";
-import img2 from "../../public/about.jpg";
+import img1 from "../../public/Mirissa-Diving-Activities-Center-1.jpg";
+import img2 from "../../public/Mirissa-Diving-Activities-Center-2.jpg";
+import img3 from "../../public/Mirissa-Diving-Activities-Center-3.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -14,17 +15,17 @@ import styles from "./page.module.css";
 export default function MySwiper() {
   const slides = [
     {
-      img: img1,
+      img: img2,
       heading: "Dive into Paradise",
       subheading: "Explore vibrant reefs and marine life in Mirissa",
     },
     {
-      img: img2,
+      img: img1,
       heading: "Scuba Diving Adventures",
       subheading: "Go deeper and discover a whole new world underwater",
     },
     {
-      img: img1,
+      img: img3,
       heading: "Underwater Memories",
       subheading: "Make every dive an adventure to remember",
     },
