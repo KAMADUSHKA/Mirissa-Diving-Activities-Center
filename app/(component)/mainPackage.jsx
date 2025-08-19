@@ -76,7 +76,7 @@ export default function MainPackage() {
     <>
       <Grid
         container
-        spacing={4}
+        spacing={3}
         justifyContent="center"
         sx={{ marginBottom: 10 }}
       >
