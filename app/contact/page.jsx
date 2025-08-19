@@ -1,6 +1,6 @@
 
 import React from 'react'
-import Header from '../(component)/header'
+import Header from '../(component)/Header.jsx'
 import Footer from '../(component)/footer'
 import Swiper from "../(component)/swiper";
 import Contact from '../(component)/contact';

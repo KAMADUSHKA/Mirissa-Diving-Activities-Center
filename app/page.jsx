@@ -2,7 +2,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import Footer from "./(component)/footer";
-import Header from "./(component)/header";
+import Header from "./(component)/Header.jsx";
 import Swiper from "./(component)/swiper";
 import { CardSpotlightDemo } from "./(component)/CardSpotlightDemo/CardSpotlightDemo";
 import { CardHoverEffectDemo } from "./(component)/CardHoverEffectDemo/CardHoverEffectDemo";
