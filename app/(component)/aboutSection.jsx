@@ -74,7 +74,7 @@ export default function AboutSection() {
     transition: "transform 0.3s ease",
   };
   return (
-    <>
+    <Box sx={{bgcolor:"rgba(33, 149, 243, 0.077)", padding:4, borderRadius:4}}>
       {/* Intro Section */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -243,6 +243,6 @@ export default function AboutSection() {
           </Grid>
         ))}
       </Grid>
-    </>
+    </Box>
   );
 }

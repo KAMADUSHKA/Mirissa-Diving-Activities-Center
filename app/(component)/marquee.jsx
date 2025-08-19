@@ -4,7 +4,7 @@ import React from 'react'
 export default function Marquee() {
   return (
  <div className="marquee">
-      <p>🐢 Mirissa Turtle Snorkeling • 🐋 Whale Watching 6:00 AM • 🌅 Sunset Cruise • 🍽 Free Breakfast</p>
+      <p>🐢  Join us at Mirissa Diving Activities Center for unforgettable Snorkeling, Whale Watching and Scuba Diving  –  Adventure Awaits!  🐋</p>
       <style jsx>{`
         .marquee {
           overflow: hidden;

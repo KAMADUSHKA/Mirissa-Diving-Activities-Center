@@ -1,4 +1,4 @@
-
+'use client'
 import React from 'react'
 import Header from '../(component)/Header.jsx'
 import Footer from '../(component)/footer'
@@ -6,6 +6,7 @@ import Swiper from "../(component)/swiper";
 import Contact from '../(component)/contact';
 import MainPackage from '../(component)/mainPackage';
 import ReviewParallax from '../(component)/review';
+import Marquee from '../(component)/marquee.jsx';
 
 function page() {
   return (
@@ -15,6 +16,7 @@ function page() {
           <Header/>
         </div>
               <Swiper />
+              <Marquee/>
               <MainPackage/>
               <Contact/>
               <ReviewParallax/>

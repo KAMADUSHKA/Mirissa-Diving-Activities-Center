@@ -7,6 +7,7 @@ import AboutSection from "../(component)/aboutSection";
 import { Container, Typography } from "@mui/material";
 import ReviewParallax from "../(component)/review";
 import MainPackage from "../(component)/mainPackage";
+import Marquee from "../(component)/marquee.jsx";
 
 export default function page() {
   return (
@@ -15,7 +16,7 @@ export default function page() {
         <Header />
       </div>
       <Swiper />
-
+    <Marquee/>
       <Container maxWidth="xl" sx={{ marginBottom: 15 }}>
         <AboutSection />
         <MainPackage />
