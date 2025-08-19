@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Footer from "./(component)/footer";
-import Header from "./(component)/header.jsx";
+import Header from "./(component)/Header.jsx";
 import Swiper from "./(component)/swiper";
 import Marquee from "./(component)/marquee"
 import { CardSpotlightDemo } from "./(component)/CardSpotlightDemo/CardSpotlightDemo";
