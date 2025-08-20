@@ -73,7 +73,7 @@ export default function MainPackage() {
         >
           <Card
             sx={{
-              maxWidth: 335,
+              maxWidth: 325,
               borderRadius: 3,
               position: "relative",
               overflow: "hidden",

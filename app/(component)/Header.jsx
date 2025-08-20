@@ -16,8 +16,10 @@ import MenuItem from "@mui/material/MenuItem";
 import Link from "next/link";
 
 const pages = [
+  { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
+  { label: "Gallery", href: "/gallery" },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -119,7 +121,17 @@ export default function ResponsiveAppBar() {
                 key={page.label}
                 component={Link}
                 href={page.href}
-                sx={{ my: 2, color: "white", display: "block", mr: 3 }}
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                  mr: 3,
+                  fontSize: "18px",
+                  fontWeight: 600,
+                  textTransform: "none",
+                  transition: "color 0.3s",
+                  "&:hover": { color: "#00CFFF" }, // ✅ same hover as footer
+                }}
               >
                 {page.label}
               </Button>

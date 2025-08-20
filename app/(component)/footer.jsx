@@ -119,6 +119,18 @@ export default function Footer() {
             spacing={3}
             sx={{ textAlign: "center", fontWeight: 500 }}
           >
+                        <Link href="/" style={{ textDecoration: "none", color: "inherit" }}>
+              <Typography
+                sx={{
+                  fontSize: "18px", // bigger size
+                  fontWeight: 600,
+                  transition: "color 0.3s",
+                  "&:hover": { color: "#00CFFF" },
+                }}
+              >
+                Home
+              </Typography>
+            </Link>
             <Link href="/about" style={{ textDecoration: "none", color: "inherit" }}>
               <Typography
                 sx={{
@@ -141,6 +153,18 @@ export default function Footer() {
                 }}
               >
                 Contact
+              </Typography>
+            </Link>
+             <Link href="/gallery" style={{ textDecoration: "none", color: "inherit" }}>
+              <Typography
+                sx={{
+                  fontSize: "18px", // bigger size
+                  fontWeight: 600,
+                  transition: "color 0.3s",
+                  "&:hover": { color: "#00CFFF" },
+                }}
+              >
+                Gallery
               </Typography>
             </Link>
           </Stack>
