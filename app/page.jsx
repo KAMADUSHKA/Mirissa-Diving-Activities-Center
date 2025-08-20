@@ -35,6 +35,7 @@ import AboutSection from "./(component)/aboutSection";
 import Review from "./(component)/review";
 import Contact from "./(component)/contact";
 import MainPackage from "./(component)/mainPackage";
+import FloatingWhatsApp from "./(component)/floatingWhatsApp";
 
 const packageDataDetails = [
   {
@@ -248,6 +249,8 @@ export default function Home() {
       <div>
         <Footer />
       </div>
+
+      <FloatingWhatsApp />
     </>
   );
 }

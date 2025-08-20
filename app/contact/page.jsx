@@ -7,6 +7,7 @@ import Contact from '../(component)/contact';
 import MainPackage from '../(component)/mainPackage';
 import ReviewParallax from '../(component)/review';
 import Marquee from '../(component)/marquee.jsx';
+import FloatingWhatsApp from '../(component)/floatingWhatsApp.jsx';
 
 function page() {
   return (
@@ -23,6 +24,7 @@ function page() {
         <div>
           <Footer/>
         </div>
+            <FloatingWhatsApp />
       </>
     </>
   )

@@ -8,6 +8,7 @@ import { Container, Typography } from "@mui/material";
 import ReviewParallax from "../(component)/review";
 import MainPackage from "../(component)/mainPackage";
 import Marquee from "../(component)/marquee.jsx";
+import FloatingWhatsApp from "../(component)/floatingWhatsApp.jsx";
 
 export default function page() {
   return (
@@ -26,6 +27,7 @@ export default function page() {
       <div>
         <Footer />
       </div>
+          <FloatingWhatsApp />
     </>
   );
 }
