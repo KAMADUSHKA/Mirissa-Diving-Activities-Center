@@ -16,20 +16,20 @@ const Contact = () => {
     {
       icon: <PhoneIcon fontSize="large" color="primary" />,
       label: "Call Us",
-      value: "+94 74 261 7251",
-      link: "tel:+94742617251",
+      value: " 077 530 6940",
+      link: "tel:+94775306940",
     },
     {
       icon: <EmailIcon fontSize="large" color="primary" />,
       label: "Email",
-      value: "info@yourbusiness.com",
-      link: "mailto:info@yourbusiness.com",
+      value: "info@mirissadivingactivitiescenter.com",
+      link: "mailto:info@mirissadivingactivitiescenter.com",
     },
     {
       icon: <WhatsAppIcon fontSize="large" color="success" />,
       label: "WhatsApp",
-      value: "+94 74 261 7251",
-      link: "https://wa.me/94742617251",
+      value: "077 530 6940",
+      link: "https://wa.me/94775306940",
     },
     {
       icon: <FacebookIcon fontSize="large" color="primary" />,
