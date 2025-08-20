@@ -131,6 +131,7 @@ export default function AboutSection() {
                   borderRadius: 3,
                   height: "100%",
                   transition: "transform 0.3s ease",
+                  minWidth:350,
                   "&:hover": {
                     transform: "translateY(-5px)",
                     bgcolor: " rgba(33, 149, 243, 0.77)",
