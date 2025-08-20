@@ -19,7 +19,7 @@ export default function Footer() {
   const socialLinks = [
     {
       icon: <WhatsAppIcon fontSize="inherit" />,
-      href: "https://wa.me/94704418827",
+      href: "https://wa.me/94775306940",
       label: "WhatsApp",
     },
     {
@@ -156,7 +156,7 @@ export default function Footer() {
             {/* Clickable phone button */}
             <Button
               component="a"
-              href="tel:+94704418827"
+              href="tel:+94775306940"
               variant="contained"
               sx={{
                 mb: 2,
@@ -176,7 +176,7 @@ export default function Footer() {
                 },
               }}
             >
-              📞 +94 70 441 8827
+              📞  077 530 6940
             </Button>
 
             {/* Social icons */}
