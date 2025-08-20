@@ -62,7 +62,7 @@ export default function ReviewParallax() {
        What Our Happy Customers Say
       </Typography>
 
-      <div style={{ padding: "20px" }}>
+      <div style={{ paddingTop: "20px", paddingBottom: "20px" }}>
         <Swiper
           style={{
             "--swiper-navigation-color": "#fff",

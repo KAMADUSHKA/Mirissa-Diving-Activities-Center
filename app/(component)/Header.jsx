@@ -34,7 +34,7 @@ export default function ResponsiveAppBar() {
   const handleCloseUserMenu = () => setAnchorElUser(null);
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "#0C1C2C" }}>
+    <AppBar position="fixed" sx={{ backgroundColor: "#0c1c2cd3" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* Logo on left */}
