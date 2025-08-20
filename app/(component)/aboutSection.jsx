@@ -94,7 +94,7 @@ export default function AboutSection() {
             marginBottom: 4,
             // Responsive font sizes
             fontSize: {
-              xs: "2rem", // small screens (mobile)
+              xs: "2.2rem", // small screens (mobile)
               sm: "2.5rem", // tablets
               md: "3.5rem", // desktop
               lg: "4rem", // large desktop
@@ -231,7 +231,7 @@ export default function AboutSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
+              transition={{ duration: 0.6, delay: i * 0.2 }}
             >
               <Typography variant="h4" fontWeight="bold">
                 {stat.number}

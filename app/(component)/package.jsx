@@ -1,30 +1,28 @@
 "use client";
-import React from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import CardActionArea from "@mui/material/CardActionArea";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import React, { useState } from "react";
 import {
   Avatar,
   Box,
+  Card,
   CardActions,
-  CardHeader,
+  CardContent,
+  CardMedia,
   Collapse,
-  Container,
   Grid,
   IconButton,
   ListItem,
   ListItemIcon,
   ListItemText,
+  Typography,
 } from "@mui/material";
-import StarIcon from "@mui/icons-material/Star";
 import { styled } from "@mui/material/styles";
-import { useState } from "react";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import StarIcon from "@mui/icons-material/Star";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { motion } from "framer-motion";
 
+// ---------------------- Data ----------------------
 const tourPackingData = [
   {
     name: "Snorkeling With Turtles",
@@ -112,6 +110,7 @@ const tourPackingData = [
   },
 ];
 
+// ---------------------- Component ----------------------
 export default function PackageCard() {
   const [expandedCards, setExpandedCards] = useState({});
 
@@ -122,7 +121,7 @@ export default function PackageCard() {
     }));
   };
 
-  // Styled component for ExpandMore button
+  // Styled Expand button
   const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
     return <IconButton {...other} />;
@@ -134,174 +133,192 @@ export default function PackageCard() {
     }),
   }));
 
+  // Card generator
   const cardData = (item, index) => (
-    <Grid key={index} item xs={12} sm={6} md={4} lg={4}>
- <Card
-      sx={{
-        borderRadius: 4,
-        maxWidth: 380,
-        boxShadow: "0 4px 10px rgba(0, 0, 0, 0.141)",
-        border: "4px solid rgba(33, 150, 243, 0.4)", // light blue outline
-        ":hover": {
-          boxShadow: "0 6px 15px rgba(0, 0, 0, 0.451)",
-          border: "5px solid rgba(33, 150, 243, 0.8)", // stronger blue on hover
-        },
-        transition: "all 0.3s ease",
-        position: "relative",
-      }}
+    <Grid
+      key={index}
+      item
+      xs={12}
+      sm={6}
+      md={4}
+      lg={4}
+      component={motion.div}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.2 }}
+      viewport={{ once: true }}
     >
-      {/* Image with overlay */}
-      <Box sx={{ position: "relative" }}>
-        <CardMedia
-          component="img"
-          height="240"
-          image={item.img}
-          alt={item.name}
-          sx={{
-            borderRadius: 3,
-            transition: "transform 0.5s ease",
-            "&:hover": { transform: "scale(1.1)" },
-          }}
-        />
-
-        {/* Overlay content */}
-        <Box
-          sx={{
-            position: "absolute",
-            top: 16,
-            left: 16,
-            display: "flex",
-            alignItems: "center",
-            gap: 1,
-            backgroundColor: "rgba(0, 0, 0, 0.4)",
-            padding: "4px 8px",
-            borderRadius: 2,
-          }}
-        >
-          <Avatar
-            sx={{ bgcolor: "rgba(236, 73, 73, 0.71)", width: 40, height: 40 }}
-            src="/MainLogo.png"
-          ></Avatar>
-          <Typography variant="h6" fontWeight="bold" color="white">
-            {item.name}
-          </Typography>
-        </Box>
-      </Box>
-
-      {/* Card content */}
-      <CardContent>
-        {/* Main call-to-action */}
-        <ListItem disablePadding>
-          <ListItemIcon>
-            <StarIcon sx={{ color: "gold" }} />
-          </ListItemIcon>
-          <ListItemText
-            primary={<Typography fontWeight="bold">Join With Us Now</Typography>}
+      <Card
+        sx={{
+          borderRadius: 4,
+          maxWidth: 380,
+          boxShadow: "0 4px 10px rgba(0, 0, 0, 0.141)",
+          border: "4px solid rgba(33, 150, 243, 0.4)",
+          ":hover": {
+            boxShadow: "0 6px 15px rgba(0, 0, 0, 0.451)",
+            border: "5px solid rgba(33, 150, 243, 0.8)",
+          },
+          transition: "all 0.3s ease",
+          position: "relative",
+        }}
+      >
+        {/* Image with overlay */}
+        <Box sx={{ position: "relative" }}>
+          <CardMedia
+            component="img"
+            height="240"
+            image={item.img}
+            alt={item.name}
+            sx={{
+              borderRadius: 3,
+              transition: "transform 0.5s ease",
+              "&:hover": { transform: "scale(1.1)" },
+            }}
           />
-        </ListItem>
-
-        <Typography variant="body2" sx={{ mb: 1 }}>
-          {item.description_1}
-        </Typography>
-
-        <Typography variant="body2" sx={{ mb: 1 }}>
-          {item.description_2}
-        </Typography>
-      </CardContent>
-
-      {/* Expand Section */}
-      <CardActions>
-        <ExpandMore
-          expand={expandedCards[index] || false}
-          onClick={() => handleExpandClick(index)}
-          aria-expanded={expandedCards[index] || false}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </ExpandMore>
-      </CardActions>
-
-      <Collapse in={expandedCards[index] || false} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography
-            variant="subtitle1"
-            fontWeight="bold"
-            sx={{ mb: 2 }}
-            gutterBottom
+          <Box
+            sx={{
+              position: "absolute",
+              top: 16,
+              left: 16,
+              display: "flex",
+              alignItems: "center",
+              gap: 1,
+              backgroundColor: "rgba(0, 0, 0, 0.4)",
+              padding: "4px 8px",
+              borderRadius: 2,
+            }}
           >
-            Other Details:
-          </Typography>
+            <Avatar
+              sx={{ bgcolor: "rgba(236, 73, 73, 0.71)", width: 40, height: 40 }}
+              src="/MainLogo.png"
+            />
+            <Typography variant="h6" fontWeight="bold" color="white">
+              {item.name}
+            </Typography>
+          </Box>
+        </Box>
 
-          {/* Icon bullet points */}
-          <ListItem disablePadding sx={{ mb: 1 }}>
+        {/* Card content */}
+        <CardContent>
+          <ListItem disablePadding>
             <ListItemIcon>
-              <AccessTimeIcon sx={{ color: "orange" }} />
+              <StarIcon sx={{ color: "gold" }} />
             </ListItemIcon>
             <ListItemText
               primary={
-                <Typography variant="body2">{item.Time_Duration}</Typography>
+                <Typography fontWeight="bold">Join With Us Now</Typography>
               }
             />
           </ListItem>
-
-          <ListItem disablePadding sx={{ mb: 1 }}>
-            <ListItemIcon>
-              <CheckCircleIcon sx={{ color: "green" }} />
-            </ListItemIcon>
-            <ListItemText
-              primary={<Typography variant="body2">{item.Special}</Typography>}
-            />
-          </ListItem>
-
-          {item.Other_Details_1 && (
-            <Typography variant="body2" sx={{ mb: 2 }}>
-              {item.Other_Details_1}
-            </Typography>
-          )}
-          {item.Other_Details_2 && (
-            <Typography variant="body2" sx={{ mb: 1 }}>
-              {item.Other_Details_2}
-            </Typography>
-          )}
+          <Typography variant="body2" sx={{ mb: 1 }}>
+            {item.description_1}
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1 }}>
+            {item.description_2}
+          </Typography>
         </CardContent>
-      </Collapse>
-    </Card>
+
+        {/* Expand Section */}
+        <CardActions>
+          <ExpandMore
+            expand={expandedCards[index] || false}
+            onClick={() => handleExpandClick(index)}
+            aria-expanded={expandedCards[index] || false}
+            aria-label="show more"
+          >
+            <ExpandMoreIcon />
+          </ExpandMore>
+        </CardActions>
+
+        <Collapse
+          in={expandedCards[index] || false}
+          timeout="auto"
+          unmountOnExit
+        >
+          <CardContent
+            component={motion.div}
+            initial={{ opacity: 0, y: 20 }}
+            animate={
+              expandedCards[index]
+                ? { opacity: 1, y: 0 }
+                : { opacity: 0, y: 20 }
+            }
+            transition={{ duration: 0.5 }}
+          >
+            <Typography
+              variant="subtitle1"
+              fontWeight="bold"
+              sx={{ mb: 2 }}
+              gutterBottom
+            >
+              Other Details:
+            </Typography>
+            <ListItem disablePadding sx={{ mb: 1 }}>
+              <ListItemIcon>
+                <AccessTimeIcon sx={{ color: "orange" }} />
+              </ListItemIcon>
+              <ListItemText
+                primary={
+                  <Typography variant="body2">{item.Time_Duration}</Typography>
+                }
+              />
+            </ListItem>
+            <ListItem disablePadding sx={{ mb: 1 }}>
+              <ListItemIcon>
+                <CheckCircleIcon sx={{ color: "green" }} />
+              </ListItemIcon>
+              <ListItemText
+                primary={<Typography variant="body2">{item.Special}</Typography>}
+              />
+            </ListItem>
+            {item.Other_Details_1 && (
+              <Typography variant="body2" sx={{ mb: 2 }}>
+                {item.Other_Details_1}
+              </Typography>
+            )}
+            {item.Other_Details_2 && (
+              <Typography variant="body2" sx={{ mb: 1 }}>
+                {item.Other_Details_2}
+              </Typography>
+            )}
+          </CardContent>
+        </Collapse>
+      </Card>
     </Grid>
   );
 
   return (
     <>
-
-            <Typography
-              variant="h2"
-              align="center"
-              gutterBottom
-          sx={{
-            fontWeight: "bold",
-            fontFamily: "Cormorant Garamond, serif",
-            color: "rgba(12, 93, 160, 0.8)",
-            textShadow: "2px 45px 4px rgba(33, 149, 243, 0.077)",
-            marginTop: 6,
-            marginBottom: 4,
-            // Responsive font sizes
-            fontSize: {
-              xs: "2rem", // small screens (mobile)
-              sm: "2.5rem", // tablets
-              md: "3.5rem", // desktop
-              lg: "4rem", // large desktop
-            },
-          }}
-            >
-              Our Signature Tour Packages
-            </Typography>
-
-
-      <Grid
-        container
-        spacing={4}
-        justifyContent="center"
-        sx={{ marginBottom: 20 }}
+      {/* Heading */}
+      <Typography
+        variant="h2"
+        align="center"
+        gutterBottom
+        component={motion.div}
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+        sx={{
+          fontWeight: "bold",
+          fontFamily: "Cormorant Garamond, serif",
+          color: "rgba(12, 93, 160, 0.8)",
+          textShadow: "2px 45px 4px rgba(33, 149, 243, 0.077)",
+          marginTop: 6,
+          marginBottom: 4,
+          fontSize: {
+            xs: "2rem",
+            sm: "2.5rem",
+            md: "3.5rem",
+            lg: "4rem",
+          },
+        }}
       >
+        Our Signature Tour Packages
+      </Typography>
+
+      {/* Cards */}
+      <Grid container spacing={4} justifyContent="center" sx={{ marginBottom: 20 }}>
         {tourPackingData.map((card, index) => cardData(card, index))}
       </Grid>
     </>

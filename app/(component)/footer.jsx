@@ -1,108 +1,226 @@
 "use client";
 
 import Link from "next/link";
-import { Box, Typography, Link as MuiLink, IconButton } from "@mui/material";
+import {
+  Box,
+  Typography,
+  IconButton,
+  Avatar,
+  Stack,
+  Button,
+} from "@mui/material";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import LanguageIcon from "@mui/icons-material/Language"; // used for TripAdvisor (no official icon)
-
-import NextLink from "next/link";
+import LanguageIcon from "@mui/icons-material/Language";
+import { motion } from "framer-motion";
 
 export default function Footer() {
+  const socialLinks = [
+    {
+      icon: <WhatsAppIcon fontSize="inherit" />,
+      href: "https://wa.me/94704418827",
+      label: "WhatsApp",
+    },
+    {
+      icon: <InstagramIcon fontSize="inherit" />,
+      href: "https://instagram.com",
+      label: "Instagram",
+    },
+    {
+      icon: <FacebookIcon fontSize="inherit" />,
+      href: "https://facebook.com",
+      label: "Facebook",
+    },
+    {
+      icon: <LanguageIcon fontSize="inherit" />,
+      href: "https://tripadvisor.com",
+      label: "TripAdvisor",
+    },
+  ];
+
   return (
     <Box
       component="footer"
-      sx={{ bgcolor: "#0C1C2C", color: "#fff", p: 4, mt: 8 }}
+      sx={{
+        position: "relative",
+        color: "#fff",
+        pt: 6,
+        pb: 3,
+        mt: 8,
+        overflow: "hidden",
+      }}
     >
+      {/* Background image with overlay */}
       <Box
         sx={{
-          display: "flex",
-          flexDirection: { xs: "column", md: "row" },
-          justifyContent: "space-between",
-          alignItems: "center",
+          position: "absolute",
+          inset: 0,
+          backgroundImage: "url('/Mirissa-Diving-Activities-Center-1.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          zIndex: 0,
+          "&::after": {
+            content: '""',
+            position: "absolute",
+            inset: 0,
+            background: "rgba(0, 0, 0, 0.81)",
+          },
+        }}
+      />
+
+      {/* Content */}
+      <Box
+        sx={{
+          position: "relative",
+          zIndex: 1,
           maxWidth: "1200px",
           mx: "auto",
+          px: 2,
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: 4,
         }}
       >
-        {/* Left: Site Name */}
-        <Typography variant="h6" sx={{ mb: { xs: 2, md: 0 }, fontWeight: 700 }}>
-          Mirissa Diving Activities Center
-        </Typography>
+        {/* Brand Logo & Name */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <Stack direction="row" spacing={2} alignItems="center">
+            <Avatar
+              alt="Logo"
+              src="/MainLogo.png"
+              sx={{ width: 70, height: 70, border: "2px solid #fff" }}
+            />
+            <Typography
+              variant="h5"
+              sx={{
+                fontWeight: 800,
+                fontFamily: "Cormorant Garamond, serif",
+              }}
+            >
+              Mirissa Diving Activities Center
+            </Typography>
+          </Stack>
+        </motion.div>
 
-        {/* Center: Quick Links */}
-        <Box sx={{ display: "flex", gap: 3 }}>
-          <MuiLink
-            component={Link}
-            href="/about"
-            underline="none"
-            color="inherit"
+        {/* Quick Links */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <Stack
+            direction="row"
+            spacing={3}
+            sx={{ textAlign: "center", fontWeight: 500 }}
           >
-            About
-          </MuiLink>
-          <MuiLink
-            component={Link}
-            href="/contact"
-            underline="none"
-            color="inherit"
-          >
-            Contact
-          </MuiLink>
-        </Box>
+            <Link href="/about" style={{ textDecoration: "none", color: "inherit" }}>
+              <Typography
+                sx={{
+                  fontSize: "18px", // bigger size
+                  fontWeight: 600,
+                  transition: "color 0.3s",
+                  "&:hover": { color: "#00CFFF" },
+                }}
+              >
+                About
+              </Typography>
+            </Link>
+            <Link href="/contact" style={{ textDecoration: "none", color: "inherit" }}>
+              <Typography
+                sx={{
+                  fontSize: "18px", // bigger size
+                  fontWeight: 600,
+                  transition: "color 0.3s",
+                  "&:hover": { color: "#00CFFF" },
+                }}
+              >
+                Contact
+              </Typography>
+            </Link>
+          </Stack>
+        </motion.div>
 
-        {/* Right: Contact & Social */}
-        <Box sx={{ textAlign: "center", mt: { xs: 2, md: 0 } }}>
-          <Typography variant="body2" sx={{ mb: 1 }}>
-            📞 +94 70 441 8827
-          </Typography>
-          <Box sx={{ display: "flex", justifyContent: "center", gap: 1 }}>
-            <IconButton
+        {/* Contact & Socials */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <Box sx={{ textAlign: "center" }}>
+            {/* Clickable phone button */}
+            <Button
               component="a"
-              href="https://wa.me/94704418827"
-              target="_blank"
-              rel="noopener"
-              sx={{ color: "#fff" }}
+              href="tel:+94704418827"
+              variant="contained"
+              sx={{
+                mb: 2,
+                px: 2,
+                py: 0.8,
+                fontSize: "14px", // smaller size
+                borderRadius: "20px",
+                background: "#00CFFF",
+                color: "#000",
+                fontWeight: 600,
+                textTransform: "none",
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  background: "#00A5CC",
+                  transform: "scale(1.08)",
+                  boxShadow: "0 4px 12px rgba(0, 207, 255, 0.4)",
+                },
+              }}
             >
-              <WhatsAppIcon />
-            </IconButton>
-            <IconButton
-              component="a"
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener"
-              sx={{ color: "#fff" }}
-            >
-              <InstagramIcon />
-            </IconButton>
-            <IconButton
-              component="a"
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener"
-              sx={{ color: "#fff" }}
-            >
-              <FacebookIcon />
-            </IconButton>
-            <IconButton
-              component="a"
-              href="https://tripadvisor.com"
-              target="_blank"
-              rel="noopener"
-              sx={{ color: "#fff" }}
-            >
-              <LanguageIcon /> {/* Used as a generic web icon */}
-            </IconButton>
+              📞 +94 70 441 8827
+            </Button>
+
+            {/* Social icons */}
+            <Stack direction="row" spacing={2} justifyContent="center">
+              {socialLinks.map((social, i) => (
+                <IconButton
+                  key={i}
+                  component="a"
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener"
+                  aria-label={social.label}
+                  sx={{
+                    fontSize: "28px", // bigger icons
+                    color: "#fff",
+                    transition: "transform 0.3s, color 0.3s",
+                    "&:hover": {
+                      transform: "scale(1.25)",
+                      color: "#00CFFF",
+                    },
+                  }}
+                >
+                  {social.icon}
+                </IconButton>
+              ))}
+            </Stack>
           </Box>
-        </Box>
+        </motion.div>
       </Box>
 
-      {/* Bottom */}
-      <Box sx={{ textAlign: "center", mt: 3 }}>
-        <Typography variant="body2" sx={{ fontSize: "13px", color: "#aaa" }}>
-          © 2025 Mirissa Diving Activities Center. All Rights Reserved. Designed
-          by WebMinds Innovations.
-        </Typography>
-      </Box>
+      {/* Bottom Text */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+      >
+        <Box sx={{ textAlign: "center", mt: 4, position: "relative", zIndex: 1 }}>
+          <Typography variant="body2" sx={{ fontSize: "13px", color: "#aaa" }}>
+            © 2025 Mirissa Diving Activities Center. All Rights Reserved.  
+            <br />
+            Designed by <strong>WebMinds Innovations</strong>.
+          </Typography>
+        </Box>
+      </motion.div>
     </Box>
   );
 }

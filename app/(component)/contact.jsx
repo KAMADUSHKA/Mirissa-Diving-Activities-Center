@@ -9,6 +9,8 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import RoomIcon from "@mui/icons-material/Room";
 import LanguageIcon from "@mui/icons-material/Language";
 
+const MotionTypography = motion(Typography); // shortcut for animated typography
+
 const Contact = () => {
   const contactItems = [
     {
@@ -45,28 +47,31 @@ const Contact = () => {
 
   return (
     <>
-      <Typography
+      {/* Top Heading */}
+      <MotionTypography
         variant="h2"
         align="center"
         gutterBottom
-          sx={{
-            fontWeight: "bold",
-            fontFamily: "Cormorant Garamond, serif",
-            color: "rgba(12, 93, 160, 0.8)",
-            textShadow: "2px 45px 4px rgba(33, 149, 243, 0.077)",
-            marginTop: 6,
-            marginBottom: 4,
-            // Responsive font sizes
-            fontSize: {
-              xs: "2rem", // small screens (mobile)
-              sm: "2.5rem", // tablets
-              md: "3.5rem", // desktop
-              lg: "4rem", // large desktop
-            },
-          }}
+        initial={{ opacity: 0, y: -40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        sx={{
+          fontWeight: "bold",
+          fontFamily: "Cormorant Garamond, serif",
+          color: "rgba(12, 93, 160, 0.8)",
+          textShadow: "2px 45px 4px rgba(33, 149, 243, 0.077)",
+          marginTop: 6,
+          marginBottom: 4,
+          fontSize: {
+            xs: "2rem",
+            sm: "2.5rem",
+            md: "3.5rem",
+            lg: "4rem",
+          },
+        }}
       >
         Contact Us
-      </Typography>
+      </MotionTypography>
 
       <Box
         sx={{
@@ -74,7 +79,7 @@ const Contact = () => {
           overflow: "hidden",
           color: "#fff",
           py: 8,
-          marginBottom:5
+          marginBottom: 5,
         }}
       >
         {/* Background Video */}
@@ -91,7 +96,7 @@ const Contact = () => {
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            zIndex: -2, // so mask is above video but below content
+            zIndex: -2,
           }}
         />
 
@@ -103,24 +108,25 @@ const Contact = () => {
             left: 0,
             width: "100%",
             height: "100%",
-            background: "rgba(0, 0, 0, 0.301)", // adjust 0.4 to make darker/lighter
+            background: "rgba(0, 0, 0, 0.35)",
             zIndex: -1,
           }}
         />
 
         <Container>
-          <Typography
+          {/* Section Title */}
+          <MotionTypography
             variant="h4"
             align="center"
             gutterBottom
-            component={motion.div}
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
             sx={{ marginBottom: 4 }}
           >
-            Contact Us
-          </Typography>
+            Get in Touch
+          </MotionTypography>
 
           {/* Contact Icons */}
           <Grid container spacing={4} justifyContent="center" sx={{ mb: 5 }}>
@@ -132,9 +138,10 @@ const Contact = () => {
                 md={4}
                 key={index}
                 component={motion.div}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                initial={{ opacity: 0, scale: 0.85 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                viewport={{ once: true }}
                 style={{ textAlign: "center" }}
               >
                 <IconButton
@@ -146,17 +153,22 @@ const Contact = () => {
                     boxShadow: "0px 4px 15px rgba(0,0,0,0.1)",
                     width: 60,
                     height: 60,
-                    transition: "all 0.3s ease", // smooth animation
+                    transition: "all 0.3s ease",
                     "&:hover": {
                       backgroundColor: "#ffffff",
-                      transform: "scale(1.1) rotate(5deg)", // slight zoom & tilt
-                      boxShadow: "0px 8px 25px rgba(0, 0, 0, 0.564)",
+                      transform: "scale(1.1) rotate(5deg)",
+                      boxShadow: "0px 8px 25px rgba(0, 0, 0, 0.56)",
                     },
                   }}
                 >
                   {item.icon}
                 </IconButton>
                 <Box
+                  component={motion.div}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                  viewport={{ once: true }}
                   sx={{
                     bgcolor: "#0606064a",
                     paddingLeft: 1,
@@ -177,9 +189,10 @@ const Contact = () => {
           {/* Google Map */}
           <Box
             component={motion.div}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
             sx={{
               borderRadius: 3,
               overflow: "hidden",
