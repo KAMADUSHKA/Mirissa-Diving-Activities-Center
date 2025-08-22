@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Container, Typography, Grid, Box, Link } from "@mui/material";
+import { Typography, Grid, Box } from "@mui/material";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
@@ -19,22 +19,10 @@ import {
 } from "swiper/modules";
 
 const features = [
-  {
-    title: "Food & Drinks",
-    text: "Complimentary breakfast or tea with cookies.",
-  },
-  {
-    title: "Many Attractions",
-    text: "Turtles, whales, dolphins and more await you.",
-  },
-  {
-    title: "Affordable Price",
-    text: "Flexible packages that fit your budget.",
-  },
-  {
-    title: "Safety Lockers",
-    text: "All gear and lockers provided for safety.",
-  },
+  { title: "Food & Drinks", text: "Complimentary breakfast or tea with cookies." },
+  { title: "Many Attractions", text: "Turtles, whales, dolphins and more await you." },
+  { title: "Affordable Price", text: "Flexible packages that fit your budget." },
+  { title: "Safety Lockers", text: "All gear and lockers provided for safety." },
 ];
 
 const stats = [
@@ -45,36 +33,42 @@ const stats = [
 ];
 
 const aboutImg = [
-  {
-    img: "/Scuba-Diving.jpg",
-  },
-  {
-    img: "/Fun-Diving.jpg",
-  },
-  {
-    img: "/Turtle-Snorkeling.jpg",
-  },
-  {
-    img: "/Whale-Snorkeling.jpg",
-  },
-  {
-    img: "/Boat-Tours.jpg",
-  },
-  {
-    img: "/Deep-Sea-Fishing-Tour.jpg",
-  },
-  {
-    img: "/Low-Deep-Sea-Fishing-Tour.jpg",
-  },
+  { img: "/Scuba-Diving.jpg" },
+  { img: "/Fun-Diving.jpg" },
+  { img: "/Turtle-Snorkeling.jpg" },
+  { img: "/Whale-Snorkeling.jpg" },
+  { img: "/Boat-Tours.jpg" },
+  { img: "/Deep-Sea-Fishing-Tour.jpg" },
+  { img: "/Low-Deep-Sea-Fishing-Tour.jpg" },
 ];
 
 export default function AboutSection() {
-  const imgStyle = {
-    borderRadius: "10px",
-    transition: "transform 0.3s ease",
-  };
   return (
-    <Box sx={{bgcolor:"rgba(33, 149, 243, 0.077)", padding:4, borderRadius:4}}>
+    <Box
+      sx={{
+        position: "relative",
+        padding: 4,
+        borderRadius: 4,
+        overflow: "hidden",
+        backgroundImage: `url('/review.jpg')`, // ✅ background image
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          bgcolor: "rgba(0,0,0,0.5)", // ✅ dark overlay
+          zIndex: 1,
+        },
+        "& > *": {
+          position: "relative",
+          zIndex: 2,
+        },
+      }}
+    >
       {/* Intro Section */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -88,22 +82,21 @@ export default function AboutSection() {
           sx={{
             fontWeight: "bold",
             fontFamily: "Cormorant Garamond, serif",
-            color: "rgba(12, 93, 160, 0.8)",
-            textShadow: "2px 45px 4px rgba(33, 149, 243, 0.077)",
+            color: "#fff",
+            textShadow: "2px 2px 6px rgba(0,0,0,0.6)",
             marginTop: 6,
             marginBottom: 4,
-            // Responsive font sizes
             fontSize: {
-              xs: "2.2rem", // small screens (mobile)
-              sm: "2.5rem", // tablets
-              md: "3.5rem", // desktop
-              lg: "4rem", // large desktop
+              xs: "2.2rem",
+              sm: "2.5rem",
+              md: "3.5rem",
+              lg: "4rem",
             },
           }}
         >
           Welcome to Mirissa Diving Activities Center
         </Typography>
-        <Typography variant="subtitle1">
+        <Typography variant="subtitle1" sx={{ color: "#f0f0f0" }}>
           Welcome to Mirissa Diving Activities Center, your gateway to
           unforgettable ocean adventures on Sri Lanka’s stunning southern coast.
           From snorkeling with graceful turtles and colorful tropical fish to
@@ -126,36 +119,39 @@ export default function AboutSection() {
             >
               <Box
                 sx={{
-                  bgcolor: " rgba(33, 150, 243, 0.4)",
+                  bgcolor: "rgba(33, 150, 243, 0.7)",
                   p: 3,
                   borderRadius: 3,
                   height: "100%",
                   transition: "transform 0.3s ease",
-                  minWidth:350,
+                  minWidth: 350,
+                   boxShadow: "0px 0px 12px rgba(0, 0, 0, 0.907)",
+                  color: "#fff",
                   "&:hover": {
                     transform: "translateY(-5px)",
-                    bgcolor: " rgba(33, 149, 243, 0.77)",
-                    color: "rgb(0, 0, 0)",
+                    bgcolor: "rgba(33, 149, 243, 0.9)",
+                    color: "#fff",
                     fontWeight: "bold",
                     letterSpacing: "1px",
-                    boxShadow: "1px 1px 5px rgba(0, 0, 0, 0.819)",
+                    boxShadow: "1px 1px 8px rgba(0,0,0,0.9)",
                   },
                 }}
               >
                 <Typography
                   variant="h5"
+                  gutterBottom
                   sx={{
+                    color: "#fff",
                     transition: "transform 0.3s ease",
                     "&:hover": {
                       transform: "translateY(-5px)",
-                      color: " rgb(0, 0, 0)",
+                      color: "#fff",
                     },
                   }}
-                  gutterBottom
                 >
                   {item.title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" sx={{ color: "#e0e0e0" }}>
                   {item.text}
                 </Typography>
               </Box>
@@ -164,54 +160,51 @@ export default function AboutSection() {
         ))}
       </Grid>
 
-      <Swiper
-        slidesPerView={1}
-        spaceBetween={20}
-        centeredSlides={true}
-        loop={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        breakpoints={{
-          640: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-        }}
-        freeMode={true}
-        pagination={{ clickable: true }}
-        effect="coverflow" // ✅ cool 3D animation
-        coverflowEffect={{
-          rotate: 20,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
-        modules={[FreeMode, Pagination, Autoplay, EffectCoverflow]}
-        style={{
-          maxWidth: "800px",
-          margin: "40px auto",
+      {/* Swiper Area with White Background */}
+      <Box
+        sx={{
+          bgcolor: "#ffffffaf", // ✅ white background
+          borderRadius: 3,
+          p: 5,
+          mt: 6,
+          maxWidth: "900px",
+          mx: "auto",
+          boxShadow: "0px 0px 12px rgba(0,0,0,0.4)", // subtle shadow
         }}
       >
-        <SwiperSlide>
-          <Image
-            src="/Deep-Diving.jpg"
-            alt="Deep Diving"
-            width={250}
-            height={200}
-            style={{
-              borderRadius: "10px",
-              transition: "transform 0.3s ease",
-            }}
-            className="hover:scale-105" // ✅ smooth zoom on hover
-          />
-        </SwiperSlide>
-
-        {aboutImg.map((item, index) => (
-          <SwiperSlide key={index}>
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={20}
+          centeredSlides={true}
+          loop={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          breakpoints={{
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          freeMode={true}
+          pagination={{ clickable: true }}
+          effect="coverflow"
+          coverflowEffect={{
+            rotate: 20,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          }}
+          modules={[FreeMode, Pagination, Autoplay, EffectCoverflow]}
+          style={{
+            maxWidth: "800px",
+            margin: "0 auto",
+          }}
+        >
+          <SwiperSlide>
             <Image
-              src={item.img}
-              alt="Mirissa-Diving-Activities-Center"
+              src="/Deep-Diving.jpg"
+              alt="Deep Diving"
               width={250}
               height={200}
               style={{
@@ -221,8 +214,25 @@ export default function AboutSection() {
               className="hover:scale-105"
             />
           </SwiperSlide>
-        ))}
-      </Swiper>
+
+          {aboutImg.map((item, index) => (
+            <SwiperSlide key={index}>
+              <Image
+                src={item.img}
+                alt="Mirissa-Diving-Activities-Center"
+                width={250}
+                height={200}
+                style={{
+                  borderRadius: "10px",
+                  transition: "transform 0.3s ease",
+                   boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.952)",
+                }}
+                className="hover:scale-105"
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Box>
 
       {/* Stats */}
       <Grid container spacing={3} sx={{ mt: 6, justifyContent: "center" }}>
@@ -234,10 +244,10 @@ export default function AboutSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.2 }}
             >
-              <Typography variant="h4" fontWeight="bold">
+              <Typography variant="h4" fontWeight="bold" sx={{ color: "#fff" }}>
                 {stat.number}
               </Typography>
-              <Typography variant="subtitle2" color="text.secondary">
+              <Typography variant="subtitle2" sx={{ color: "#ddd" }}>
                 {stat.label}
               </Typography>
             </motion.div>
