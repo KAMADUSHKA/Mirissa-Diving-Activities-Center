@@ -11,6 +11,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import styles from "./page.module.css";
+import { Box } from "@mui/material";
+import { Height } from "@mui/icons-material";
 
 export default function MySwiper() {
   const slides = [
@@ -32,37 +34,36 @@ export default function MySwiper() {
   ];
 
   return (
-    <Swiper
-      spaceBetween={30}
-      centeredSlides={true}
-      autoplay={{
-        delay: 2500,
-        disableOnInteraction: false,
-      }}
-      pagination={{
-        clickable: true,
-      }}
-      navigation={true}
-      modules={[Autoplay, Pagination, Navigation]}
-      className="mySwiper"
-      
-    >
-      {slides.map((slide, index) => (
-        <SwiperSlide key={index}> 
-          <div className={styles.slideContainer}>
-            <Image
-              src={slide.img}
-              alt={slide.heading}
-              className={styles.slideImage}
-              
-            />
-            <div className={styles.textOverlay}>
-              <h1 className={styles.heading}>{slide.heading}</h1>
-              <p className={styles.subheading}>{slide.subheading}</p>
-            </div>
+   <Box sx={{ pt: 8.9, backgroundColor: "#0c1c2cf7" }}>
+  <Swiper
+    spaceBetween={30}
+    centeredSlides={true}
+    autoplay={{
+      delay: 2500,
+      disableOnInteraction: false,
+    }}
+    pagination={{ clickable: true }}
+    navigation={true}
+    modules={[Autoplay, Pagination, Navigation]}
+    className="mySwiper"
+  >
+    {slides.map((slide, index) => (
+      <SwiperSlide key={index}>
+        <div className={styles.slideContainer}>
+          <Image
+            src={slide.img}
+            alt={slide.heading}
+            className={styles.slideImage}
+          />
+          <div className={styles.textOverlay}>
+            <h1 className={styles.heading}>{slide.heading}</h1>
+            <p className={styles.subheading}>{slide.subheading}</p>
           </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+        </div>
+      </SwiperSlide>
+    ))}
+  </Swiper>
+</Box>
+
   );
 }

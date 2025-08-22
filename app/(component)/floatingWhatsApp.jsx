@@ -2,8 +2,11 @@
 
 import Link from "next/link";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import { useState } from "react";
 
 export default function FloatingWhatsApp() {
+  const [hover, setHover] = useState(false);
+
   return (
     <Link
       href="https://wa.me/94775306940"
@@ -11,20 +14,21 @@ export default function FloatingWhatsApp() {
       rel="noopener noreferrer"
     >
       <div
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
         style={{
           position: "fixed",
           bottom: "20px",
           right: "20px",
-          backgroundColor: "#25d365cd",
-          color: "white",
-          borderRadius: "50%",
-          padding: "1px",
-          boxShadow: "0 2px 5px rgba(0,0,0,0.3)",
+          color: "#25d365", // WhatsApp green
           zIndex: 1000,
           cursor: "pointer",
+          transition: "transform 0.3s ease, filter 0.3s ease",
+          transform: hover ? "scale(1.2)" : "scale(1)",
+          filter: hover ? "drop-shadow(0 4px 8px rgba(37, 211, 101, 0.7))" : "none",
         }}
       >
-        <WhatsAppIcon style={{ fontSize: 65, }} />
+        <WhatsAppIcon style={{ fontSize: 65 }} />
       </div>
     </Link>
   );
