@@ -146,100 +146,103 @@ export default function Home() {
           Why Choose Us
         </Typography>
 
-        <Grid
-          container
-          spacing={2}
-          mt={3}
-          mb={3}
-          justifyContent="center"
+<Grid
+  container
+  spacing={2}
+  mt={3}
+  mb={3}
+  justifyContent="center"
+  sx={{
+    background:
+      "linear-gradient(135deg, rgba(206, 206, 206, 0.737), rgba(255, 255, 255, 0.019))",
+    borderRadius: 4,
+    py: 4,
+  }}
+>
+  <Grid item xs={12} md={10}>
+    <Card
+      sx={{
+        display: "flex",
+        flexDirection: { xs: "column", md: "row" },
+        width: "100%",
+        overflow: "hidden",
+        boxShadow: "none",
+        background: "transparent",
+        height: { xs: "auto", md: 380, lg: 480 },
+      }}
+    >
+      {/* Video Section */}
+      <Box
+        sx={{
+          flex: 1,
+          order: { xs: 1, md: 2 },
+          minHeight: { xs: 220, md: "100%" },
+          marginRight:2,
+          marginLeft:2
+        }}
+      >
+        <video
+          src="/Diving.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            borderRadius: "12px",
+          }}
+        />
+      </Box>
+
+      {/* Text Section */}
+      <Box
+        sx={{
+          flex: 1,
+          order: { xs: 2, md: 1 },
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          textAlign: "center",
+          p: { xs: 2, md: 4, lg: 5 },
+        }}
+      >
+        <Typography
+          component="div"
+          gutterBottom
           sx={{
-            background:
-              "linear-gradient(135deg, rgba(206, 206, 206, 0.737), rgba(255, 255, 255, 0.019))",
-            borderRadius: 4,
-            py: 4,
+            fontWeight: "bold",
+            color: "rgba(13, 80, 135, 0.929)",
+            fontSize: { xs: "1.4rem", md: "1.8rem", lg: "2.3rem" }, // ✅ Bigger title
           }}
         >
-          <Grid item xs={12} md={6}>
-            <Card
-              sx={{
-                display: "flex",
-                flexDirection: { xs: "column", md: "row" }, // only switch to column below md (900px)
-                width: "100%",
-                overflow: "hidden",
-                boxShadow: "none",
-                background: "transparent",
-                height: { xs: "auto", md: 350, lg: 450 },
-              }}
-            >
-              {/* Video Section */}
-              <Box
-                sx={{
-                  flex: 1,
-                  order: { xs: 1, md: 2 }, // video on top only below md
-                  minHeight: { xs: 220, md: "100%" },
-                }}
-              >
-                <video
-                  src="/Diving.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    borderRadius: "12px",
-                  }}
-                />
-              </Box>
+          Diving With Mirissa Diving Activities Center
+        </Typography>
 
-              {/* Text Section */}
-              <Box
-                sx={{
-                  flex: 1,
-                  order: { xs: 2, md: 1 }, // text below video only below md
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "flex-start",
-                  alignItems: "center",
-                  textAlign: "center",
-                  p: { xs: 2, md: 3, lg: 4 },
-                }}
-              >
-                <Typography
-                  component="div"
-                  variant="h5"
-                  gutterBottom
-                  sx={{
-                    fontWeight: "bold",
-                    color: "rgba(13, 80, 135, 0.929) ",
-                  }}
-                >
-                  Diving With Mirissa Diving Activities Center
-                </Typography>
+        <Typography
+          variant="body1"
+          color="rgb(0, 0, 0)"
+          sx={{
+            mt: 2,
+            maxWidth: { xs: 320, md: 560, lg: 640 },
+            fontSize: { xs: "0.95rem", md: "1.1rem", lg: "1.2rem" }, // ✅ Readable body
+            lineHeight: { xs: 1.6, md: 1.8 },
+          }}
+        >
+          Discover the wonders of the Indian Ocean with Mirissa Diving Activities
+          Center. Swim alongside graceful sea turtles, colorful tropical fish,
+          and spot majestic whales in crystal-clear waters. With expert guides,
+          top-quality equipment, and unforgettable experiences, Mirissa is the
+          perfect destination for both beginners and seasoned divers. Dive in
+          and create memories that last a lifetime!
+        </Typography>
+      </Box>
+    </Card>
+  </Grid>
+</Grid>
 
-                <Typography
-                  variant="subtitle1"
-                  color="rgb(0, 0, 0)"
-                  sx={{
-                    mt: 1,
-                    maxWidth: { xs: 300, md: 520 },
-                    lineHeight: 1.6,
-                  }}
-                >
-                  Discover the wonders of the Indian Ocean with Mirissa Diving
-                  Activities Center. Swim alongside graceful sea turtles,
-                  colorful tropical fish, and spot majestic whales in
-                  crystal-clear waters. With expert guides, top-quality
-                  equipment, and unforgettable experiences, Mirissa is the
-                  perfect destination for both beginners and seasoned divers.
-                  Dive in and create memories that last a lifetime!
-                </Typography>
-              </Box>
-            </Card>
-          </Grid>
-        </Grid>
 
         <PackageCard />
       </Container>
