@@ -36,6 +36,7 @@ import Review from "./(component)/review";
 import Contact from "./(component)/contact";
 import MainPackage from "./(component)/mainPackage";
 import FloatingWhatsApp from "./(component)/floatingWhatsApp";
+import GoogleReviews from "./(component)/googleReviews";
 
 const packageDataDetails = [
   {
@@ -249,6 +250,7 @@ export default function Home() {
       <Contact />
       <Review />
 
+<GoogleReviews/>
       <div>
         <Footer />
       </div>
