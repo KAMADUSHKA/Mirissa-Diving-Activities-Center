@@ -5,9 +5,9 @@ import Footer from '../(component)/footer'
 import Swiper from "../(component)/swiper";
 import Contact from '../(component)/contact';
 import MainPackage from '../(component)/mainPackage';
-import ReviewParallax from '../(component)/review';
 import Marquee from '../(component)/marquee.jsx';
 import FloatingWhatsApp from '../(component)/floatingWhatsApp.jsx';
+import GoogleReviews from '../(component)/googleReviews.jsx';
 
 function page() {
   return (
@@ -20,7 +20,7 @@ function page() {
               <Marquee/>
               <MainPackage/>
               <Contact/>
-              <ReviewParallax/>
+<GoogleReviews/>
         <div>
           <Footer/>
         </div>

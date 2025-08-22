@@ -32,7 +32,7 @@ import { styled } from "@mui/material/styles";
 import { useState } from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AboutSection from "./(component)/aboutSection";
-import Review from "./(component)/review";
+
 import Contact from "./(component)/contact";
 import MainPackage from "./(component)/mainPackage";
 import FloatingWhatsApp from "./(component)/floatingWhatsApp";
@@ -248,7 +248,7 @@ export default function Home() {
         <PackageCard />
       </Container>
       <Contact />
-      <Review />
+
 
 <GoogleReviews/>
       <div>

@@ -5,10 +5,10 @@ import Footer from "../(component)/footer";
 import Swiper from "../(component)/swiper";
 import AboutSection from "../(component)/aboutSection";
 import { Container, Typography } from "@mui/material";
-import ReviewParallax from "../(component)/review";
 import MainPackage from "../(component)/mainPackage";
 import Marquee from "../(component)/marquee.jsx";
 import FloatingWhatsApp from "../(component)/floatingWhatsApp.jsx";
+import GoogleReviews from "../(component)/googleReviews.jsx";
 
 export default function page() {
   return (
@@ -22,7 +22,7 @@ export default function page() {
         <AboutSection />
         <MainPackage />
       </Container>
-      <ReviewParallax />
+     <GoogleReviews/>
 
       <div>
         <Footer />

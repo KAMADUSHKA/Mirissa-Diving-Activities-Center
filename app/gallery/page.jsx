@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 import Gallery from "../(component)/gallery";
 import { Container } from "@mui/material";
 import FloatingWhatsApp from "../(component)/floatingWhatsApp";
+import GoogleReviews from "../(component)/googleReviews";
 
 const images = [
   { img: "/Scuba-Diving.jpg" },
@@ -36,7 +37,7 @@ export default function Page() {
       </Container>
 
 
-
+<GoogleReviews/>
       <div>
         <Footer />
       </div>
