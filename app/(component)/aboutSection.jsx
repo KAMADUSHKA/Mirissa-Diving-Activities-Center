@@ -137,7 +137,7 @@ export default function AboutSection() {
             p: 3,
             borderRadius: 3,
             height: "100%",   // ✅ fills full height
-            width: "300",    // ✅ fills full width
+            width: "100%",    // ✅ fills full width
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
