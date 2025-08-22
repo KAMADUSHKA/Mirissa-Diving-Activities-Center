@@ -25,7 +25,7 @@ export default function FloatingWhatsApp() {
           cursor: "pointer",
           transition: "transform 0.3s ease, filter 0.3s ease",
           transform: hover ? "scale(1.2)" : "scale(1)",
-          filter: hover ? "drop-shadow(0 4px 8px rgba(37, 211, 101, 0.7))" : "none",
+          filter: hover ? "drop-shadow(0 4px 8px rgba(37, 211, 101, 0.253))" : "none",
         }}
       >
         <WhatsAppIcon style={{ fontSize: 65 }} />
