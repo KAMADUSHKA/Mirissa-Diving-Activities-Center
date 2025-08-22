@@ -108,58 +108,66 @@ export default function AboutSection() {
       </motion.div>
 
       {/* Features */}
-      <Grid container spacing={3} sx={{ mt: 5, justifyContent: "center" }}>
-        {features.map((item, i) => (
-          <Grid item xs={12} sm={6} md={3} key={i}>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-            >
-              <Box
-                sx={{
-                  bgcolor: "rgba(33, 150, 243, 0.7)",
-                  p: 3,
-                  borderRadius: 3,
-                  height: "100%",
-                  transition: "transform 0.3s ease",
-                  minWidth: 320,
-                  justifyContent: "center",
-                   boxShadow: "0px 0px 12px rgba(0, 0, 0, 0.907)",
-                  color: "#fff",
-                  "&:hover": {
-                    transform: "translateY(-5px)",
-                    bgcolor: "rgba(33, 149, 243, 0.9)",
-                    color: "#fff",
-                    fontWeight: "bold",
-                    letterSpacing: "1px",
-                    boxShadow: "1px 1px 8px rgba(0,0,0,0.9)",
-                  },
-                }}
-              >
-                <Typography
-                  variant="h5"
-                  gutterBottom
-                  sx={{
-                    color: "#fff",
-                    transition: "transform 0.3s ease",
-                    "&:hover": {
-                      transform: "translateY(-5px)",
-                      color: "#fff",
-                    },
-                  }}
-                >
-                  {item.title}
-                </Typography>
-                <Typography variant="body2" sx={{ color: "#e0e0e0" }}>
-                  {item.text}
-                </Typography>
-              </Box>
-            </motion.div>
-          </Grid>
-        ))}
-      </Grid>
+<Grid 
+  container 
+  spacing={3} 
+  sx={{ 
+    mt: 5, 
+    justifyContent: "center",
+    alignItems: "stretch", // ✅ ensures equal height in row
+  }}
+>
+  {features.map((item, i) => (
+    <Grid 
+      item 
+      xs={12} sm={6} md={3} 
+      key={i}
+      sx={{ display: "flex" }} // ✅ make each grid cell flex
+    >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: i * 0.1 }}
+        style={{ flex: 1 }} // ✅ box takes full equal width
+      >
+        <Box
+          sx={{
+            bgcolor: "rgba(33, 150, 243, 0.7)",
+            p: 3,
+            borderRadius: 3,
+            height: "100%",   // ✅ fills full height
+            minWidth: 315,  // ✅ fills full width
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            boxShadow: "0px 0px 12px rgba(0, 0, 0, 0.907)",
+            color: "#fff",
+            textAlign: "center",
+            transition: "transform 0.3s ease",
+            "&:hover": {
+              transform: "translateY(-5px)",
+              bgcolor: "rgba(33, 149, 243, 0.9)",
+              fontWeight: "bold",
+              letterSpacing: "1px",
+              boxShadow: "1px 1px 8px rgba(0,0,0,0.9)",
+            },
+          }}
+        >
+          <Typography variant="h5" gutterBottom sx={{ color: "#fff" }}>
+            {item.title}
+          </Typography>
+          <Typography variant="body2" sx={{ color: "#e0e0e0" }}>
+            {item.text}
+          </Typography>
+        </Box>
+      </motion.div>
+    </Grid>
+  ))}
+</Grid>
+
+
 
       {/* Swiper Area with White Background */}
       <Box
