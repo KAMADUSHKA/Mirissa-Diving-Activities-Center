@@ -124,7 +124,8 @@ export default function AboutSection() {
                   borderRadius: 3,
                   height: "100%",
                   transition: "transform 0.3s ease",
-                  minWidth: 350,
+                  minWidth: 320,
+                  justifyContent: "center",
                    boxShadow: "0px 0px 12px rgba(0, 0, 0, 0.907)",
                   color: "#fff",
                   "&:hover": {

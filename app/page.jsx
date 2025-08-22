@@ -176,7 +176,7 @@ export default function Home() {
         sx={{
           flex: 1,
           order: { xs: 1, md: 2 },
-          minHeight: { xs: 220, md: "100%" },
+          minHeight: { xs: 240, md: "100%" },
           marginRight:2,
           marginLeft:2
         }}
