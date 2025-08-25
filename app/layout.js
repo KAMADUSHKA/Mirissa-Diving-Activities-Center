@@ -14,7 +14,13 @@ export const metadata = {
     "Discover unforgettable ocean adventures with Mirissa Diving Activities Center. Snorkeling, diving, fishing, dolphin & whale watching tours in Mirissa.",
   keywords:
     "Mirissa Diving Activities Center, Mirissa snorkeling, whale watching Mirissa, scuba diving Mirissa, night diving Mirissa, deep sea fishing Mirissa, turtle snorkeling, Sri Lanka snorkeling, deep sea tours, PADI Courses, Kayak Tours, Sunset Boat Tours",
-  authors: [{ name: "Mirissa Diving Activities Center" }],
+metadataBase: new URL("https://www.mirissadivingactivities.com"),
+alternates: {
+  canonical: "https://www.mirissadivingactivities.com",
+},
+themeColor: "#2007ffff",
+
+    authors: [{ name: "Mirissa Diving Activities Center" }],
   robots: "index, follow",
   openGraph: {
     title: "Mirissa Diving Activities Center",
