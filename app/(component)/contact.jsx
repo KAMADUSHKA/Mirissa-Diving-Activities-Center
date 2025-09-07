@@ -16,8 +16,8 @@ const Contact = () => {
     {
       icon: <PhoneIcon fontSize="large" color="primary" />,
       label: "Call Us",
-      value: " 077 530 6940",
-      link: "tel:+94775306940",
+      value: " 0773416421",
+      link: "tel:+94773416421",
     },
     {
       icon: <EmailIcon fontSize="large" color="primary" />,
@@ -28,8 +28,8 @@ const Contact = () => {
     {
       icon: <WhatsAppIcon fontSize="large" color="success" />,
       label: "WhatsApp",
-      value: "077 530 6940",
-      link: "https://wa.me/94775306940",
+      value: "0773416421",
+      link: "https://wa.me/94773416421",
     },
     {
       icon: <FacebookIcon fontSize="large" color="primary" />,
